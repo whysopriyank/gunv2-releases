@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "document_status": "DRAFT_NO_GO",
-  "generated_utc": "2026-10-02T15:14:13.409389+00:00",
+  "generated_utc": "2026-10-02T17:51:45.401272+00:00",
   "source": {
     "private": true,
     "candidate_commit": "099cf04bfbfe02f93336303b80c26cf0df2f2606",
@@ -46,8 +46,8 @@
   },
   "fin18_ordered_validation": {
     "source_sha": "099cf04bfbfe02f93336303b80c26cf0df2f2606",
-    "generated_utc": "2026-10-02T13:06:44.079795+00:00",
-    "fin17": "Original immutable FIN-17 packet READY; bigbeast host addendum pending.",
+    "generated_utc": "2026-10-02T17:51:45.401272+00:00",
+    "fin17": "READY: original immutable 329-file packet and 81-file Linux bigbeast READY addendum accepted.",
     "ci_run": 37009492173,
     "nightly_run": 37010023487,
     "controller_sha256": "ab620967815af9e4dc9ff9fae87ef157b7a4918f9e451af6af9412922b4ca804",
@@ -55,43 +55,82 @@
       {
         "stage": "fin18-1-smoke",
         "required_seconds": 300,
-        "status": "PENDING_FINAL_ACCEPTED_EVIDENCE"
+        "status": "PASS_REVALIDATED",
+        "platform": "Linux",
+        "original_result_sha256": "3a4b8c7f7ea786569fb8631a4ec5ee484164bd8541757409ef187eb1aa3940ad",
+        "reopened_state_hash_blake3": "69bdda79fb5ecc1fd1bfb663255742b315afbd177ae9cf3cfde4638c96820ba7",
+        "runner_active_seconds": 313.737
       },
       {
         "stage": "fin18-2-load",
         "required_seconds": 900,
-        "status": "PENDING_FINAL_ACCEPTED_EVIDENCE"
+        "status": "PASS_REVALIDATED",
+        "platform": "Linux",
+        "original_result_sha256": "e890c29b515f8813e7b0125eab411ba3e001b2d2b5a564f3abbe9467f467d6bc",
+        "reopened_state_hash_blake3": "0e9d3f66b5660894fe374fa5d142e38bb2868c8dd15b4be1dbe7a6c68489c485",
+        "runner_active_seconds": 912.461
       },
       {
         "stage": "fin18-3-recovery",
         "required_seconds": null,
-        "status": "PENDING_FINAL_ACCEPTED_EVIDENCE"
+        "status": "PASS_REVALIDATED",
+        "platform": "Linux",
+        "original_result_sha256": "a40b682199528dd88a43cae989283663294e6f2033b3f628dd0459b050b54526",
+        "reopened_state_hash_blake3": "857b7b14a531bf4de6fe5d5bdcd0de3975a8fd4b67bfacae94b1e8f86781884b",
+        "recovery_ready_seconds": 0.100944
       },
       {
         "stage": "fin18-4-qualification",
         "required_seconds": 3300,
-        "status": "PENDING_FINAL_ACCEPTED_EVIDENCE"
+        "status": "PASS_REVALIDATED",
+        "platform": "Linux",
+        "original_result_sha256": "e3573f2ca5c101de2dde08740481493d42020a1cd6624254c95e81c596e165c9",
+        "reopened_state_hash_blake3": "fa658b9193c5884bde7a35f2dee14f2674b7c64d668947dd6d38105520f00639",
+        "runner_active_seconds": 3312.649
       },
       {
         "stage": "fin18-5-endurance",
         "required_seconds": 21600,
-        "status": "PENDING_FINAL_ACCEPTED_EVIDENCE"
+        "status": "RUNNING",
+        "platform": "Linux",
+        "started_utc": "2026-10-02T17:47:09.480926Z",
+        "earliest_duration_completion_utc": "2026-10-02T23:47:09.480926Z",
+        "earliest_duration_completion_ist": "2026-10-03T05:17:09.480926+05:30",
+        "completion_note": "Earliest duration boundary only; completion assertions, sealing and independent final review follow."
       }
     ],
     "optional_24h": "NOT_REQUIRED per accepted scope",
     "release_verdict": "NO_GO until all ordered gates and independent final review pass",
     "previous_candidate": "defba1f withdrawn; no prior stage passes inherited",
     "qualification_execution": {
-      "intended_final_host": "bigbeast",
-      "intended_final_platform": "Linux",
-      "status": "PENDING_REMOTE_FINAL_QUALIFICATION",
-      "macos_evidence": "Available cells require final frozen-packet addendum and explicit acceptance; do not relabel them as Linux results."
+      "host": "bigbeast",
+      "platform": "Linux",
+      "status": "STAGES_1_4_ACCEPTED_STAGE_5_RUNNING",
+      "macos_evidence": "Accepted platform-specific cells retain macOS identity; no macOS result is relabeled as Linux."
     },
-    "controller_identity_status": "Timing-v3 independently accepted; remote runtime freeze pending.",
-    "frozen_packet_addendum": "PENDING",
-    "independent_final_review": "PENDING"
+    "controller_identity_status": "Endurance resume controller and separate bounded-reader comparison addendum frozen and accepted for stage 5 continuation.",
+    "frozen_packet_addendum": "ACCEPTED_FOR_STAGE_5_CONTINUATION; final completed endurance evidence pending",
+    "independent_final_review": "PENDING_AFTER_COMPLETED_ENDURANCE",
+    "chain_controller_sha256": "ea32443e7ae7dc1923ba0f5c0e31ca8951502584656cec57ee8d3060585da827",
+    "retained_stage_review": {
+      "verdict": "ACCEPT_RETAINED_STAGES_1_4_FOR_STAGE5_CONTINUATION",
+      "raw_files_verified": 184,
+      "freeze_manifest_sha256": "b1186756011e58515b8e96deec1a3be30c6e77ea36e6e8565b682dbce917b2ae",
+      "archive_sha256": "e0f42b4972e4f5656c99053758b42e440b8338920187b730080a1683e19c1654",
+      "original_ledger_verdict": "NO_GO",
+      "note": "Original no-go record is preserved. Independent revalidation accepted retained stages after correcting the bounded-reader comparison to a 4096-entry pool in a separate addendum; source and workload are unchanged."
+    },
+    "endurance_resume_manifest_sha256": "1a811cc36fa270a16e9ebab1afe0001bead91dfa76f3c65351ed5fe1efcf54da",
+    "measurement_scope": {
+      "reads": "Bounded sampled reads; reader pool capped at 4096 entries. Not every successful ACK was individually read back.",
+      "persistence": "Exact persisted-state reopen hashes verified for accepted retained stages. Endurance reopen checks pending completion.",
+      "apply_p95": "UNEXERCISED",
+      "throughput": "Bounded connected-client profile; not maximum throughput or production readiness.",
+      "durations": "runner_active_seconds records runner lifetime including startup and cleanup, not measured loader-active duration."
+    },
+    "resume_controller_sha256": "1a3e557401defa728be6405baf0fd3813910fd98b3609bc76acb06d847420424"
   },
-  "release_claim": "NO_GO before all mandatory stages and independent final review",
+  "release_claim": "NO_GO until mandatory six-hour endurance passes, final evidence is sealed and independent final review accepts",
   "publication": {
     "status": "NOT_PUBLISHED",
     "release_tag": "v0.1.0-alpha.1"

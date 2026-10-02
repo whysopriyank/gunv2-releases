@@ -1,23 +1,27 @@
 # Draft alpha qualification manifest
 
-**NO GO. Mandatory qualification and independent final review remain pending.** This draft identifies fixed candidate artifacts; it is not a completed qualification statement.
+**NO GO. Mandatory six-hour endurance and independent final review remain pending.** This draft identifies fixed candidate artifacts and accepted retained stages; it is not a completed qualification statement.
 
-Private source candidate: `099cf04bfbfe02f93336303b80c26cf0df2f2606`. Public destination: documentation and artifacts only at https://github.com/whysopriyank/gunv2-releases. No private source or Git history is included.
+Private source candidate: `099cf04bfbfe02f93336303b80c26cf0df2f2606`. Public destination: documentation and artifacts only at https://github.com/whysopriyank/gunv2-releases. No private source or Git history is included. The five ZIP identities remain unchanged.
 
-The intended final qualification host is Linux bigbeast. Available macOS cells retain their actual platform identity and require a frozen-packet addendum before acceptance. The final controller hash, exact stage durations, evidence identities, CI/Miri states and independent final review must be sealed before GO. Earlier candidate results are not inherited.
+The original 329-file FIN-17 packet and 81-file Linux bigbeast READY addendum are accepted. Exact-candidate CI passes all eight jobs; selected nightly Miri and fuzz jobs pass. Platform-specific macOS evidence retains its actual platform identity.
 
-| Ordered stage | Required seconds or check | Status |
-|---|---:|---|
-| fin18-1-smoke | 300 | PENDING final accepted evidence |
-| fin18-2-load | 900 | PENDING final accepted evidence |
-| fin18-3-recovery | recovery assertions | PENDING final accepted evidence |
-| fin18-4-qualification | 3300 | PENDING final accepted evidence |
-| fin18-5-endurance | 21600 | PENDING final accepted evidence |
+Independent retained-stage revalidation accepted Linux stages 1–4, verified 184 raw evidence files and exact persisted reopen state hashes, and authorized continuation to stage 5. The original NO GO ledger remains preserved. A separate addendum fixes the comparison to the bounded 4,096-entry reader pool; candidate source, ZIPs and workload are unchanged. This acceptance does not authorize publication.
 
-The mandatory endurance duration is 21,600 seconds; the optional 24-hour run is not required.
+| Ordered stage | Required duration or check | Observed evidence | Status |
+|---|---:|---|---|
+| Smoke | 300 seconds | 313.737-second runner lifetime; exact persisted reopen | PASS REVALIDATED |
+| Load | 900 seconds | 912.461-second runner lifetime; exact persisted reopen | PASS REVALIDATED |
+| Recovery | recovery assertions | readiness at 0.100944 seconds; exact persisted reopen | PASS REVALIDATED |
+| Qualification | 3,300 seconds | 3,312.649-second runner lifetime; exact persisted reopen | PASS REVALIDATED |
+| Endurance | 21,600 seconds | started 2026-10-02T17:47:09.480926Z | RUNNING |
 
-Exact-candidate CI passes all eight jobs; the selected nightly Miri and fuzz jobs pass. The server host addendum remains pending.
+Runner lifetimes include startup and cleanup; they are not measured loader-active durations.
 
-The five ZIP SHA-256 values and byte counts in qualification-manifest.json match the accepted archive bytes. The installed ZIP/template/TypeScript roundtrip and declarations probe records PASS with example, declaration and relay exits 0. This installation check does not replace the pending long qualification stages.
+The earliest endurance duration boundary is 2026-10-02T23:47:09.480926Z, or 05:17 IST on 3 October. It is not a promised GO time: completion assertions, persisted reopens, final evidence sealing and independent final review follow. The optional 24-hour run is not required.
 
-Acceptance is bounded to the documented connected-client profile and platforms. No maximum-throughput or production-readiness claim is made. Update this document and the JSON together only after reviewing actual sealed evidence.
+Reads are bounded samples with a reader pool capped at 4,096 entries; not every successful ACK was individually read back. Exact persisted-state reopen checks cover accepted retained stages; the endurance checks remain pending. Apply p95 is **UNEXERCISED**. The profile does not claim maximum throughput or production readiness.
+
+The JSON records the retained result hashes, reopen state hashes, frozen evidence identity and endurance controller/resume-manifest identities. Private evidence paths, raw logs, source files and keys are excluded from these public documents.
+
+The five ZIP SHA-256 values and byte counts match the accepted archive bytes. The installed ZIP/template/TypeScript roundtrip and declarations probe records PASS with example, declaration and relay exits 0. That installation check does not replace endurance or independent final review.

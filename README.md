@@ -2,7 +2,7 @@
 
 This public repository contains release documentation and binary/SDK artifacts only. The implementation source and its Git history remain private. Project artifacts are licensed MIT OR Apache-2.0; each ZIP carries the project licenses and third-party notices.
 
-**Draft release preparation: NO GO.** The ZIP identities below are fixed, but mandatory qualification and independent final review remain pending. No public release is claimed by this draft. Long qualification stages are being prepared for Linux on bigbeast; completed macOS evidence cells require their final frozen-packet addendum before use. A final manifest must identify the actual host, controller, durations and evidence for every accepted cell.
+**Draft release preparation: NO GO.** The source candidate and five ZIP identities remain unchanged. The original FIN-17 packet and Linux bigbeast READY addendum are accepted. Linux smoke, load, recovery and the actual 55-minute qualification stage are accepted after independent retained-stage revalidation. Mandatory six-hour endurance started at 17:47:09 UTC on 2 October 2026 and is running; its earliest duration boundary is 05:17 IST on 3 October, followed by completion checks and independent final review. No public release is claimed by this draft.
 
 Connected-client alpha for greenfield evaluation. When the alpha is published, download the ZIP for your platform from this repository’s Releases page. There are no npm or PyPI releases.
 
@@ -78,6 +78,8 @@ client.on_update(entries => console.log(entries));
 Construction starts the socket asynchronously. Writes require an open socket and can throw while connecting. Use `wss` for an HTTPS page. The generated declarations describe the exported API.
 
 ## Alpha limits
+
+Qualification uses bounded sampled reads with a 4,096-entry reader pool and exact persisted-state reopen checks; it does not claim that every successful ACK was individually read back. Apply p95 is UNEXERCISED. Endurance reopen checks remain pending until completion.
 
 Use public-write namespaces with these SDKs. PUT success means sent to the socket; it does not confirm acceptance, commitment or durability. Negative PUT ACKs are not surfaced as SDK write errors. Applications requiring confirmed saves are outside this alpha scope. There is no durable offline outbox or SDK signing/certificate API.
 
