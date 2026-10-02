@@ -1,0 +1,99 @@
+{
+  "schema_version": 1,
+  "document_status": "DRAFT_NO_GO",
+  "generated_utc": "2026-10-02T15:14:13.409389+00:00",
+  "source": {
+    "private": true,
+    "candidate_commit": "099cf04bfbfe02f93336303b80c26cf0df2f2606",
+    "workspace_lock_sha256": "0165e808f1d7bd536c15fefb85ff2102c53b086996214fc18f8401197218d4e6"
+  },
+  "public_destination": "https://github.com/whysopriyank/gunv2-releases",
+  "artifact_identity": {
+    "source_sha": "099cf04bfbfe02f93336303b80c26cf0df2f2606",
+    "bundles": [
+      {
+        "file": "gunv2-relay-linux-x86_64.zip",
+        "bytes": 1654831,
+        "sha256": "c952d9c34efbce345d380b92fddb16be565ca7394d2f627d12ac303ac026304d"
+      },
+      {
+        "file": "gunv2-relay-macos-arm64-tls.zip",
+        "bytes": 1897385,
+        "sha256": "987d24a12eefb1328a77ea4a0d879d8e1abdccc44e9dbe63c82bc1b8b5698298"
+      },
+      {
+        "file": "gunv2-ts-client.zip",
+        "bytes": 93509,
+        "sha256": "fa469ea5d54d649b30c1ff3f19fd66388d5526d241bbc81327c3025e8cb585de"
+      },
+      {
+        "file": "gunv2-wasm.zip",
+        "bytes": 148658,
+        "sha256": "bdd64207447c36e43a33c886c3eb41fee184340bbec1cf091505525cf76c7204"
+      },
+      {
+        "file": "gunv2-python-linux-x86_64-cp312.zip",
+        "bytes": 493035,
+        "sha256": "b76b55a0619010ec88b35f7e7be5f774a33a9a2fdeb1de3a68f3be66ebd26566"
+      }
+    ]
+  },
+  "ci_evidence": {
+    "ci_run": 37009492173,
+    "nightly_run": 37010023487,
+    "status": "PASS",
+    "note": "Exact-candidate CI8/8 and selected nightly Miri/fuzz2/2 pass; long-run qualification remains pending."
+  },
+  "fin18_ordered_validation": {
+    "source_sha": "099cf04bfbfe02f93336303b80c26cf0df2f2606",
+    "generated_utc": "2026-10-02T13:06:44.079795+00:00",
+    "fin17": "Original immutable FIN-17 packet READY; bigbeast host addendum pending.",
+    "ci_run": 37009492173,
+    "nightly_run": 37010023487,
+    "controller_sha256": "ab620967815af9e4dc9ff9fae87ef157b7a4918f9e451af6af9412922b4ca804",
+    "stages": [
+      {
+        "stage": "fin18-1-smoke",
+        "required_seconds": 300,
+        "status": "PENDING_FINAL_ACCEPTED_EVIDENCE"
+      },
+      {
+        "stage": "fin18-2-load",
+        "required_seconds": 900,
+        "status": "PENDING_FINAL_ACCEPTED_EVIDENCE"
+      },
+      {
+        "stage": "fin18-3-recovery",
+        "required_seconds": null,
+        "status": "PENDING_FINAL_ACCEPTED_EVIDENCE"
+      },
+      {
+        "stage": "fin18-4-qualification",
+        "required_seconds": 3300,
+        "status": "PENDING_FINAL_ACCEPTED_EVIDENCE"
+      },
+      {
+        "stage": "fin18-5-endurance",
+        "required_seconds": 21600,
+        "status": "PENDING_FINAL_ACCEPTED_EVIDENCE"
+      }
+    ],
+    "optional_24h": "NOT_REQUIRED per accepted scope",
+    "release_verdict": "NO_GO until all ordered gates and independent final review pass",
+    "previous_candidate": "defba1f withdrawn; no prior stage passes inherited",
+    "qualification_execution": {
+      "intended_final_host": "bigbeast",
+      "intended_final_platform": "Linux",
+      "status": "PENDING_REMOTE_FINAL_QUALIFICATION",
+      "macos_evidence": "Available cells require final frozen-packet addendum and explicit acceptance; do not relabel them as Linux results."
+    },
+    "controller_identity_status": "Timing-v3 independently accepted; remote runtime freeze pending.",
+    "frozen_packet_addendum": "PENDING",
+    "independent_final_review": "PENDING"
+  },
+  "release_claim": "NO_GO before all mandatory stages and independent final review",
+  "publication": {
+    "status": "NOT_PUBLISHED",
+    "release_tag": "v0.1.0-alpha.1"
+  }
+}
