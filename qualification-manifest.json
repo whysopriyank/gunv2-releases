@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "document_status": "DRAFT_NO_GO",
-  "generated_utc": "2026-10-02T17:51:45.401272+00:00",
+  "document_status": "QUALIFIED_GO",
+  "generated_utc": "2026-10-03T00:06:34.442833+00:00",
   "source": {
     "private": true,
     "candidate_commit": "099cf04bfbfe02f93336303b80c26cf0df2f2606",
@@ -42,11 +42,11 @@
     "ci_run": 37009492173,
     "nightly_run": 37010023487,
     "status": "PASS",
-    "note": "Exact-candidate CI8/8 and selected nightly Miri/fuzz2/2 pass; long-run qualification remains pending."
+    "note": "Exact-candidate CI8/8 and selected nightly Miri/fuzz2/2 pass; independent FIN18-7 final review GO accepted by the main executor."
   },
   "fin18_ordered_validation": {
     "source_sha": "099cf04bfbfe02f93336303b80c26cf0df2f2606",
-    "generated_utc": "2026-10-02T17:51:45.401272+00:00",
+    "generated_utc": "2026-10-03T00:06:34.442833+00:00",
     "fin17": "READY: original immutable 329-file packet and 81-file Linux bigbeast READY addendum accepted.",
     "ci_run": 37009492173,
     "nightly_run": 37010023487,
@@ -91,26 +91,68 @@
       {
         "stage": "fin18-5-endurance",
         "required_seconds": 21600,
-        "status": "RUNNING",
+        "status": "PASS",
         "platform": "Linux",
         "started_utc": "2026-10-02T17:47:09.480926Z",
-        "earliest_duration_completion_utc": "2026-10-02T23:47:09.480926Z",
-        "earliest_duration_completion_ist": "2026-10-03T05:17:09.480926+05:30",
-        "completion_note": "Earliest duration boundary only; completion assertions, sealing and independent final review follow."
+        "finished_utc": "2026-10-02T23:48:38.041195Z",
+        "result_sha256": "203d4be74af3503bbf876d89a59342d4c34371f5dfc1ab26256bb26c9fcb8966",
+        "runner_lifetime_seconds": 21613.573,
+        "duration_scope": "Runner lifetime includes startup and cleanup; measured loader-active duration is not claimed.",
+        "reader_counts": {
+          "log": {
+            "gets": 21410,
+            "hits": 21410,
+            "avg_ms": 0.21,
+            "max_ms": 3.6,
+            "errors": 0,
+            "mismatches": 0,
+            "misses": 0
+          },
+          "mem": {
+            "gets": 21409,
+            "hits": 21409,
+            "avg_ms": 0.21,
+            "max_ms": 3.1,
+            "errors": 0,
+            "mismatches": 0,
+            "misses": 0
+          }
+        },
+        "observer_gaps": [],
+        "reopen_cycles": 2,
+        "reopened_entries_per_cycle": 85734,
+        "reopened_state_hash_blake3": "7bb6c0644c7efecd2e438589e022341903880884e464c8a2d9aab85fedc07f71",
+        "load_errors": 0,
+        "successful_acks": {
+          "mem": 85735,
+          "log": 85734
+        },
+        "peak_rss_kib": {
+          "mem": 59724,
+          "log": 52652
+        },
+        "persisted_reopen_store": "log"
       }
     ],
     "optional_24h": "NOT_REQUIRED per accepted scope",
-    "release_verdict": "NO_GO until all ordered gates and independent final review pass",
+    "release_verdict": "GO \u2014 independent FIN18-7 final review accepted by main executor for the approved bounded public alpha",
     "previous_candidate": "defba1f withdrawn; no prior stage passes inherited",
     "qualification_execution": {
       "host": "bigbeast",
       "platform": "Linux",
-      "status": "STAGES_1_4_ACCEPTED_STAGE_5_RUNNING",
+      "status": "ALL_ORDERED_STAGES_PASS_INDEPENDENT_GO",
       "macos_evidence": "Accepted platform-specific cells retain macOS identity; no macOS result is relabeled as Linux."
     },
     "controller_identity_status": "Endurance resume controller and separate bounded-reader comparison addendum frozen and accepted for stage 5 continuation.",
-    "frozen_packet_addendum": "ACCEPTED_FOR_STAGE_5_CONTINUATION; final completed endurance evidence pending",
-    "independent_final_review": "PENDING_AFTER_COMPLETED_ENDURANCE",
+    "frozen_packet_addendum": "FINAL_ENDURANCE_PACKET_ACCEPTED",
+    "independent_final_review": {
+      "verdict": "GO",
+      "reviewed_utc": "2026-10-02T23:59:27.931156+00:00",
+      "report_sha256": "1764a6d0f385b26bcbb21e0b89d133e6059a95f937743a8f8447e2933a364c45",
+      "verdict_sha256": "fbc264cb0e6c184b08828f1c8fafcdd29d86651950e88f00cbdeb222fb319cc7",
+      "root_acceptance": "GO",
+      "scope": "approved bounded public alpha artifacts; source private"
+    },
     "chain_controller_sha256": "ea32443e7ae7dc1923ba0f5c0e31ca8951502584656cec57ee8d3060585da827",
     "retained_stage_review": {
       "verdict": "ACCEPT_RETAINED_STAGES_1_4_FOR_STAGE5_CONTINUATION",
@@ -123,16 +165,38 @@
     "endurance_resume_manifest_sha256": "1a811cc36fa270a16e9ebab1afe0001bead91dfa76f3c65351ed5fe1efcf54da",
     "measurement_scope": {
       "reads": "Bounded sampled reads; reader pool capped at 4096 entries. Not every successful ACK was individually read back.",
-      "persistence": "Exact persisted-state reopen hashes verified for accepted retained stages. Endurance reopen checks pending completion.",
+      "persistence": "Exact LogStore persisted-state reopen hashes verified for retained stages and two full endurance LogStore reopens with 85,734 entries each and identical state hashes. No memory-store persistence claim.",
       "apply_p95": "UNEXERCISED",
       "throughput": "Bounded connected-client profile; not maximum throughput or production readiness.",
       "durations": "runner_active_seconds records runner lifetime including startup and cleanup, not measured loader-active duration."
     },
-    "resume_controller_sha256": "1a3e557401defa728be6405baf0fd3813910fd98b3609bc76acb06d847420424"
+    "resume_controller_sha256": "1a3e557401defa728be6405baf0fd3813910fd98b3609bc76acb06d847420424",
+    "final_packet": {
+      "archive_sha256": "06aa012bfc2cb906215fdf9b07ec840928e2f3c533bb89aa47c09b1bb386a6fa",
+      "archive_bytes": 4741938,
+      "indexed_files": 61,
+      "independent_review": "GO"
+    },
+    "post_run_integrity": {
+      "frozen_original_files": 2955,
+      "prior_files": 184,
+      "addendum_files": 4,
+      "changed": [],
+      "container_exit": 0,
+      "network": "none",
+      "readonly_original_inputs": true,
+      "new_evidence_output_writable": true
+    }
   },
-  "release_claim": "NO_GO until mandatory six-hour endurance passes, final evidence is sealed and independent final review accepts",
+  "release_claim": "GO for the approved bounded connected-client public alpha; no production readiness claim",
   "publication": {
-    "status": "NOT_PUBLISHED",
-    "release_tag": "v0.1.0-alpha.1"
+    "status": "READY_FOR_PUBLICATION",
+    "release_tag": "v0.1.0-alpha.1",
+    "release_url": "https://github.com/whysopriyank/gunv2-releases/releases/tag/v0.1.0-alpha.1"
+  },
+  "supply_chain_disposition": {
+    "warning": "RUSTSEC-2025-0134: unmaintained rustls-pemfile 2.2.0; no reported vulnerability",
+    "accepted_owner": "Priyank",
+    "acceptance_expires": "2026-11-01"
   }
 }

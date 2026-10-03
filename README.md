@@ -2,9 +2,9 @@
 
 This public repository contains release documentation and binary/SDK artifacts only. The implementation source and its Git history remain private. Project artifacts are licensed MIT OR Apache-2.0; each ZIP carries the project licenses and third-party notices.
 
-**Draft release preparation: NO GO.** The source candidate and five ZIP identities remain unchanged. The original FIN-17 packet and Linux bigbeast READY addendum are accepted. Linux smoke, load, recovery and the actual 55-minute qualification stage are accepted after independent retained-stage revalidation. Mandatory six-hour endurance started at 17:47:09 UTC on 2 October 2026 and is running; its earliest duration boundary is 05:17 IST on 3 October, followed by completion checks and independent final review. No public release is claimed by this draft.
+**Qualified public alpha: GO.** All mandatory ordered Linux stages pass, including the six-hour endurance run on bigbeast. Independent FIN18-7 final review returned GO and the main executor accepted it. Source and the five ZIP identities remain unchanged. This qualification applies to the bounded connected-client alpha described below.
 
-Connected-client alpha for greenfield evaluation. When the alpha is published, download the ZIP for your platform from this repository’s Releases page. There are no npm or PyPI releases.
+Connected-client alpha for greenfield evaluation. Download the ZIP for your platform from this repository’s [Releases page](https://github.com/whysopriyank/gunv2-releases/releases/tag/v0.1.0-alpha.1). There are no npm or PyPI releases.
 
 | ZIP | Contents / supported environment |
 |---|---|
@@ -79,7 +79,7 @@ Construction starts the socket asynchronously. Writes require an open socket and
 
 ## Alpha limits
 
-Qualification uses bounded sampled reads with a 4,096-entry reader pool and exact persisted-state reopen checks; it does not claim that every successful ACK was individually read back. Apply p95 is UNEXERCISED. Endurance reopen checks remain pending until completion.
+Qualification uses bounded sampled reads with a 4,096-entry reader pool and exact persisted-state reopen checks; it does not claim that every successful ACK was individually read back. Apply p95 is UNEXERCISED. Endurance completed two full LogStore persisted reopens with 85,734 entries and the same state hash in each. The 21,613.573-second runner lifetime includes startup and cleanup; it is not a measured loader-active duration.
 
 Use public-write namespaces with these SDKs. PUT success means sent to the socket; it does not confirm acceptance, commitment or durability. Negative PUT ACKs are not surfaced as SDK write errors. Applications requiring confirmed saves are outside this alpha scope. There is no durable offline outbox or SDK signing/certificate API.
 
