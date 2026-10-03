@@ -29,3 +29,5 @@ Reads are bounded samples with a reader pool capped at 4,096 entries; not every 
 The JSON records the retained result hashes, reopen state hashes, frozen evidence identity and endurance controller/resume-manifest identities. Private evidence paths, raw logs, source files and keys are excluded from these public documents.
 
 The five ZIP SHA-256 values and byte counts match the accepted archive bytes. The installed ZIP/template/TypeScript roundtrip and declarations probe records PASS with example, declaration and relay exits 0. Both installation and independent final review pass.
+
+Published prerelease: [v0.1.0-alpha.1](https://github.com/whysopriyank/gunv2-releases/releases/tag/v0.1.0-alpha.1) at 2026-10-03T00:08:01Z. Source remains private.

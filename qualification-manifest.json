@@ -190,9 +190,12 @@
   },
   "release_claim": "GO for the approved bounded connected-client public alpha; no production readiness claim",
   "publication": {
-    "status": "READY_FOR_PUBLICATION",
+    "status": "PUBLISHED",
     "release_tag": "v0.1.0-alpha.1",
-    "release_url": "https://github.com/whysopriyank/gunv2-releases/releases/tag/v0.1.0-alpha.1"
+    "release_url": "https://github.com/whysopriyank/gunv2-releases/releases/tag/v0.1.0-alpha.1",
+    "release_id": 401936699,
+    "published_utc": "2026-10-03T00:08:01Z",
+    "public_tag_commit": "2ac2017991000f0118d6ac92318bef2323af098c"
   },
   "supply_chain_disposition": {
     "warning": "RUSTSEC-2025-0134: unmaintained rustls-pemfile 2.2.0; no reported vulnerability",
